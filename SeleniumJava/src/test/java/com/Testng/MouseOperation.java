@@ -27,6 +27,7 @@ public class MouseOperation {
 	public WebDriver driver;
   @Test(priority = 1)
   public void validatePageLoad() {
+	  
 	  System.out.println("verifying correct page load");
 	  String title=driver.getTitle();
 	  String expectedTitle="jQuery contextMenu (2.x)";

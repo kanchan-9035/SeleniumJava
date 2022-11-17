@@ -3,19 +3,11 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="com.Testng.ValidateMultipleWindow">
+      <class name="com.Testng.DataPovider">
         <methods>
-          <include name="afterSuite"/>
-          <include name="beforeMethod"/>
-          <include name="beforeClass"/>
-          <include name="afterClass"/>
-          <include name="beforeSuite"/>
-          <include name="afterTest"/>
-          <include name="NewBrowserWindow"/>
-          <include name="beforeTest"/>
-          <include name="afterMethod"/>
+          <include name="test"/>
         </methods>
-      </class> <!-- com.Testng.ValidateMultipleWindow -->
+      </class> <!-- com.Testng.DataPovider -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
