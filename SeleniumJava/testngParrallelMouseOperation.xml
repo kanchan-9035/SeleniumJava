@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite thread-count="2" parallel="methods" name="Suite">
+  <test thread-count="2" parallel="methods" name="ParrallelTestMouse">
+    <classes>
+      <class name="com.Testng.MouseOperation">
+      <methods>
+         <include name="validatePageLoad"></include>
+         <include name="validatingRighClickOperation"></include>
+         <include name="VerifyDoubleClickOperation"></include>
+         <include name="VerifyDragAndDrop"></include>
+      </methods>
+      </class>
+    </classes>
+  </test> <!-- ParrallelTestMouse -->
+</suite> <!-- Suite -->
