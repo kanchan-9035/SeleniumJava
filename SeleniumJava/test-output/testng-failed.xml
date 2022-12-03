@@ -1,22 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
-<suite thread-count="2" parallel="methods" name="Failed suite [Suite]" guice-stage="DEVELOPMENT">
-  <test thread-count="2" parallel="methods" name="ParrallelTestMouse(failed)">
+<suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
+  <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="com.Testng.MouseOperation">
+      <class name="com.Testng.DataDrivenTest">
         <methods>
-          <include name="afterClass"/>
+          <include name="beforeMethod"/>
+          <include name="afterTest"/>
+          <include name="beforeClass"/>
           <include name="beforeTest"/>
           <include name="afterMethod"/>
-          <include name="beforeMethod"/>
-          <include name="beforeSuite"/>
+          <include name="verifyDataDrivenFromExcel"/>
           <include name="afterSuite"/>
-          <include name="afterTest"/>
-          <include name="VerifyDoubleClickOperation"/>
-          <include name="beforeClass"/>
-          <include name="validatingRighClickOperation"/>
+          <include name="afterClass"/>
+          <include name="beforeSuite"/>
         </methods>
-      </class> <!-- com.Testng.MouseOperation -->
+      </class> <!-- com.Testng.DataDrivenTest -->
     </classes>
-  </test> <!-- ParrallelTestMouse(failed) -->
-</suite> <!-- Failed suite [Suite] -->
+  </test> <!-- Default test(failed) -->
+</suite> <!-- Failed suite [Default suite] -->

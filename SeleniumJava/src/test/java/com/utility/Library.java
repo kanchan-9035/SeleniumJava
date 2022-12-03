@@ -7,6 +7,8 @@ import java.util.Map;
 import java.util.Properties;
 import java.util.concurrent.TimeUnit;
 
+import org.apache.poi.ss.usermodel.DataFormatter;
+import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
@@ -18,6 +20,7 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 public class Library {
 	public static WebDriver driver;
 	public static Properties objProperties;
+	public static HashMap<String, String> hmap=new HashMap<String, String>();
 	
 	public static void ReadPropertiesFile() {
 		System.out.println("Location of the project :: "+System.getProperty("user.dir"));
@@ -69,7 +72,39 @@ public class Library {
 		
 	}
 	public static void PageLoadTimeOut() {
-		driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
+		driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);	
+	}
+	
+	public static HashMap<String, String> ReadExcelFile(int RowNumber, XSSFSheet obSheet){
+		
+		DataFormatter objFormatter=new DataFormatter();
+		//map.put("RunMode", obSheet.getRow(RowNumber).getCell(0).getStringCellValue());
+		hmap.put("TestCaseName", obSheet.getRow(RowNumber).getCell(1).getStringCellValue());
+		hmap.put("FirstName", obSheet.getRow(RowNumber).getCell(2).getStringCellValue());
+		hmap.put("LastName", obSheet.getRow(RowNumber).getCell(3).getStringCellValue());
+		hmap.put("Address", obSheet.getRow(RowNumber).getCell(4).getStringCellValue());
+		hmap.put("Email Address", obSheet.getRow(RowNumber).getCell(5).getStringCellValue());
+		hmap.put("PhoneNumber", objFormatter.formatCellValue(obSheet.getRow(RowNumber).getCell(5)));
+		//hmap.put("PhoneNumber", obSheet.getRow(RowNumber).getCell(6).getStringCellValue());
+		hmap.put("Gender", obSheet.getRow(RowNumber).getCell(7).getStringCellValue());
+		hmap.put("Hobbies", obSheet.getRow(RowNumber).getCell(8).getStringCellValue());
+		hmap.put("Languages", obSheet.getRow(RowNumber).getCell(9).getStringCellValue());
+
+		hmap.put("Skills", obSheet.getRow(RowNumber).getCell(10).getStringCellValue());
+		hmap.put("Country", obSheet.getRow(RowNumber).getCell(11).getStringCellValue());
+		hmap.put("SelectCountry", obSheet.getRow(RowNumber).getCell(12).getStringCellValue());
+		hmap.put("DOB_YY", objFormatter.formatCellValue(obSheet.getRow(RowNumber).getCell(13)));
+		
+		//hmap.put("DOB_YY", obSheet.getRow(RowNumber).getCell(13).getStringCellValue());
+		hmap.put("DOB_MM", obSheet.getRow(RowNumber).getCell(14).getStringCellValue());
+		//hmap.put("DOB_DD", obSheet.getRow(RowNumber).getCell(15).getStringCellValue());
+		hmap.put("DOB_DD", objFormatter.formatCellValue(obSheet.getRow(RowNumber).getCell(15)));
+		
+		hmap.put("Password", obSheet.getRow(RowNumber).getCell(16).getStringCellValue());
+		hmap.put("confirm Password", obSheet.getRow(RowNumber).getCell(17).getStringCellValue());
+	//	hmap.put("Result", obSheet.getRow(RowNumber).getCell(18).getStringCellValue());
+		return hmap;
 		
 	}
+	
 }

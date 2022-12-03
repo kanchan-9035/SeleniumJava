@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="TestPractice">
+  <test name="TestScript1">
+    <classes>
+      <class name="com.moduleTest1.Test1">
+      <methods>
+          <include name="test2"></include>
+      </methods>
+      </class>
+    </classes>
+  </test> 
+  
+  <test name="TestScript2">
+    <classes>
+      <class name="com.moduleTest2.Test2">
+      <methods>
+           <include name="test3"></include>
+      </methods>
+      </class>
+    </classes>
+  </test> 
+</suite> <!-- TestPractice -->
+
